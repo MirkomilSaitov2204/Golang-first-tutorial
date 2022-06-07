@@ -9,8 +9,8 @@ func main() {
 	//ex_c4()
 	//ex_c5()
 	//ex_t1()
-
-	findSum([]int{1, 2, 3, 4})
+	s := []int{1, 2, 3, 4}
+	fmt.Println(findSum(s...))
 }
 
 func ex_c1() {
@@ -112,7 +112,7 @@ func ex_t1() {
 
 }
 
-func findSum(...items) int {
+func findSum(items ...int) int {
 	item := 0
 	for _, val := range items {
 		item += val
