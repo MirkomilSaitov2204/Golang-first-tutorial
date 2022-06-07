@@ -112,11 +112,11 @@ func ex_t1() {
 
 }
 
-//func findSum(...items) int {
-//	item := 0
-//	for _, val := range items {
-//		item += val
-//	}
-//
-//	return item
-//}
+func findSum(...items) int {
+	item := 0
+	for _, val := range items {
+		item += val
+	}
+
+	return item
+}
