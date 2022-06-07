@@ -7,7 +7,10 @@ func main() {
 	//ex_c2()
 	//ex_c3()
 	//ex_c4()
-	ex_c5()
+	//ex_c5()
+	//ex_t1()
+
+	findSum([]int{1, 2, 3, 4})
 }
 
 func ex_c1() {
@@ -90,4 +93,30 @@ func ex_c5() {
 	for _, val := range s3 {
 		fmt.Print(val, " ")
 	}
+}
+
+func ex_t1() {
+	fmt.Println("Enter the first name")
+
+	var first string
+
+	fmt.Scanln(&first)
+
+	fmt.Println("Enter the second name")
+
+	var second string
+
+	fmt.Scanln(&second)
+
+	fmt.Println(first + " " + second)
+
+}
+
+func findSum(...items) int {
+	item := 0
+	for _, val := range items {
+		item += val
+	}
+
+	return item
 }
