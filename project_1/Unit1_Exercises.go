@@ -3,7 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	first()
+	//first()
+	//second()
+	//third()
+	fourth()
 }
 
 func first() {
@@ -21,4 +24,33 @@ func first() {
 	}
 	fmt.Println(result)
 
+}
+
+func second() {
+	fmt.Println("Welcome to Go Programming")
+	fmt.Println("Programming is fun ")
+}
+
+func third() {
+	times := 5
+
+	for i := 1; i <= times; i++ {
+		fmt.Printf("Welcome to Java %v\n\n", i)
+	}
+}
+
+func fourth() {
+	//1.4
+	arr := [4][3]int{{1, 1, 1}, {2, 4, 8}, {3, 9, 27}, {4, 16, 64}}
+
+	for i := 0; i < 4; i++ {
+		for j := 0; j < 3; j++ {
+			fmt.Printf("    %v", arr[i][j])
+		}
+		fmt.Println()
+	}
+}
+
+func ()  {
+	
 }
