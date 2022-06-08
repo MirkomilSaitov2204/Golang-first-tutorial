@@ -6,7 +6,9 @@ func main() {
 	//first()
 	//second()
 	//third()
-	fourth()
+	//fourth()
+	//fifth()
+	findArea()
 }
 
 func first() {
@@ -51,6 +53,26 @@ func fourth() {
 	}
 }
 
-func ()  {
-	
+func fifth() {
+	var val float32
+
+	val = (9.5*4.5 - 2.5*3) / (45.5 - 3.5)
+	fmt.Println(val)
+}
+
+func findArea() {
+	var radius float32
+	var pi float32
+	pi = 3.14
+
+	fmt.Println("Please enter radius")
+
+	fmt.Scan(&radius)
+
+	perimetr := 2 * radius * pi
+	area := radius * radius * pi
+
+	fmt.Println(perimetr)
+	fmt.Println(area)
+
 }
