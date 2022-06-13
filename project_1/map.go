@@ -11,7 +11,8 @@ func main() {
 	//m_ex2()
 	//m_ex3()
 	//m_ex4()
-	m_ex5()
+	//m_ex5()
+	ass1()
 }
 
 func m_ex1() {
@@ -105,5 +106,24 @@ func m_ex5() {
 	for _, n := range names {
 		fmt.Printf("%s\t%.2f\n", n, sal[n])
 	}
+
+}
+
+func ass1() {
+	//write program which is removing repeating words
+	srt := []string{"one", "two", "three", "two", "four", "four", "one", "four"}
+	fmt.Println(srt)
+	//srt := sort.Strings()
+	m := make(map[string]bool)
+
+	for i := range srt {
+		word := srt[i]
+		if !m[word] {
+			m[word] = true
+		}
+	}
+
+	fmt.Println(m)
+	fmt.Println(srt)
 
 }
