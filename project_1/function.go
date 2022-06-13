@@ -4,7 +4,10 @@ import "fmt"
 
 func main() {
 	//f_ex1()
-	f_ex2()
+	//f_ex2()
+	//f_ex3()
+	//f_ex4()
+	f_ex5()
 }
 
 func f_ex1() {
@@ -46,4 +49,63 @@ func avg(stock []float32) float32 {
 		total += item
 	}
 	return total / float32(len(stock))
+}
+
+func f_ex3() {
+	sum(1, 2)
+	sum(3, 4, 5)
+
+	nums := []int{1, 2, 3, 4, 5}
+
+	sum(nums...)
+	sum2(nums)
+}
+
+func sum(nums ...int) {
+	var total int
+
+	for _, i := range nums {
+		total += i
+	}
+	println(total)
+}
+
+func sum2(nums []int) {
+	var total int
+
+	for _, i := range nums {
+		total += i
+	}
+	println(total)
+}
+
+func f_ex4() {
+	names := []string{"Amy", "SMT", "Helen"}
+	echo(names...)
+}
+
+func echo(names ...string) {
+	for _, s := range names {
+		fmt.Println(s)
+	}
+}
+
+func f_ex5() {
+	data := []string{"Mike", "Hello", "", "Timmy"}
+
+	fmt.Println(data)
+
+	fmt.Println(trimSlice(data))
+
+}
+
+func trimSlice(names []string) []string {
+
+	var newData []string
+	for _, d := range names {
+		if d != "" {
+			newData = append(newData, d)
+		}
+	}
+	return newData
 }
