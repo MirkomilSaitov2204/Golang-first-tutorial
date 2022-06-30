@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 func main() {
 	//printMsg("Calling a function")
 	//
@@ -119,22 +115,22 @@ func main() {
 	//time.Sleep(5 * time.Second)
 	//fmt.Println("LOC 2", time.Now())
 
-	fmt.Println(square(2))
-	fmt.Println(square(4))
-	fmt.Println(square(3))
+	//fmt.Println(square(2))
+	//fmt.Println(square(4))
+	//fmt.Println(square(3))
 }
 
-func square(x int) (result int) {
-	result = x * x
-
-	defer func() {
-		if x == 2 || x == 4 {
-			result += x
-		}
-	}()
-	fmt.Print("* ")
-	return
-}
+//func square(x int) (result int) {
+//	result = x * x
+//
+//	defer func() {
+//		if x == 2 || x == 4 {
+//			result += x
+//		}
+//	}()
+//	fmt.Print("* ")
+//	return
+//}
 
 //func showMsg() {
 //	fmt.Println("\nSHOWMSG", time.Now())
