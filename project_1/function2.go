@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	//printMsg("Calling a function")
@@ -80,28 +82,64 @@ func main() {
 	//	return i * i2
 	//}, 2, 4))
 
-	add := func(nums ...int) int {
-		total := 0
-		for _, i := range nums {
-			total += i
-		}
-		return total
-	}
+	//add := func(nums ...int) int {
+	//	total := 0
+	//	for _, i := range nums {
+	//		total += i
+	//	}
+	//	return total
+	//}
+	//
+	//mult := func(nums ...int) int {
+	//	total := 1
+	//	for _, i := range nums {
+	//		total *= i
+	//	}
+	//	return total
+	//}
+	//fmt.Println(add(1, 2, 3, 4))
+	//nums := []int{1, 2, 3, 4}
+	//fmt.Println(add(nums...))
+	//
+	//fmt.Println(calc(add, nums))
+	//fmt.Println(calc(mult, nums))
 
-	mult := func(nums ...int) int {
-		total := 1
-		for _, i := range nums {
-			total *= i
-		}
-		return total
-	}
-	fmt.Println(add(1, 2, 3, 4))
-	nums := []int{1, 2, 3, 4}
-	fmt.Println(add(nums...))
+	////////////Factorial//////////
+	//fmt.Println("=>", factorial(3))
+	//fmt.Println("=>", factorial(4))
+	//fmt.Println("=>", factorial(5))
 
-	fmt.Println(calc(add, nums))
-	fmt.Println(calc(mult, nums))
+	////////////Fibonacchi//////////
+	//for i := 0; i <= 15; i++ {
+	//	fmt.Printf("%d ", fibonacci(i))
+	//}
+	//fmt.Println(fibonacci(4))
+	//defer showMsg()
+	//fmt.Println("LOC 1", time.Now())
+	//time.Sleep(5 * time.Second)
+	//fmt.Println("LOC 2", time.Now())
+
+	fmt.Println(square(2))
+	fmt.Println(square(4))
+	fmt.Println(square(3))
 }
+
+func square(x int) (result int) {
+	result = x * x
+
+	defer func() {
+		if x == 2 || x == 4 {
+			result += x
+		}
+	}()
+	fmt.Print("* ")
+	return
+}
+
+//func showMsg() {
+//	fmt.Println("\nSHOWMSG", time.Now())
+//
+//}
 
 //func printMsg(msg string) {
 //	fmt.Println(msg)
@@ -159,6 +197,25 @@ func main() {
 //	return f(x, y)
 //}
 
-func calc(f func(...int) int, i []int) int {
-	return f(i...)
-}
+//func calc(f func(...int) int, i []int) int {
+//	return f(i...)
+//}
+
+//func factorial(n int) int {
+//
+//	if n == 0 {
+//		return 1
+//	}
+//	fmt.Print(n, " ")
+//
+//	return n * factorial((n - 1))
+//}
+
+//func fibonacci(n int) int {
+//	if n == 0 {
+//		return 0
+//	} else if n == 1 {
+//		return 1
+//	}
+//	return fibonacci(n-1) + fibonacci(n-2)
+//}
