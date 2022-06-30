@@ -36,13 +36,71 @@ func main() {
 	//num2 := getPositiveInt()
 	//fmt.Println(num2()) //1
 
-	addCounter, multCounter := addBy(), multBy()
+	//addCounter, multCounter := addBy(), multBy()
+	//
+	//fmt.Println(addCounter(2))
+	//fmt.Println(addCounter(3))
+	//fmt.Println(multCounter(3))
+	//fmt.Println(multCounter(3))
 
-	fmt.Println(addCounter(2))
-	fmt.Println(addCounter(3))
-	fmt.Println(multCounter(3))
-	fmt.Println(multCounter(3))
+	/////////Callback function/////////
 
+	//sqrt := func(i int) int {
+	//	return i * i
+	//}
+	//cube := func(i int) int {
+	//	return i * i * i
+	//}
+	//
+	//fmt.Println(calc(sqrt, 3))
+	//fmt.Println(calc(cube, 3))
+	//
+	//fmt.Println(calc(func(i int) int {
+	//	return i * i
+	//}, 3))
+
+	////////////Assignment//////////
+
+	//add := func(i, j int) int {
+	//	return i + j
+	//}
+	//
+	//mult := func(i, j int) int {
+	//	return i * j
+	//}
+	//
+	//fmt.Println(calc(add, 2, 4))
+	//fmt.Println(calc(mult, 2, 4))
+	//
+	//fmt.Println(calc(func(i int, i2 int) int {
+	//	return i + i2
+	//}, 2, 4))
+	//
+	//fmt.Println(calc(func(i int, i2 int) int {
+	//	return i * i2
+	//}, 2, 4))
+
+	add := func(nums ...int) int {
+		total := 0
+		for _, i := range nums {
+			total += i
+		}
+		return total
+	}
+
+	mult := func(nums ...int) int {
+		total := 1
+		for _, i := range nums {
+			total *= i
+		}
+		return total
+	}
+	fmt.Println(add(1, 2, 3, 4))
+	nums := []int{1, 2, 3, 4}
+	fmt.Println(add(nums...))
+
+	fmt.Println(calc(add, nums))
+	fmt.Println(calc(mult, nums))
 }
 
 //func printMsg(msg string) {
@@ -75,18 +133,32 @@ func main() {
 //	}
 //}
 
-func addBy() func(int) int {
-	total := 0
-	return func(i int) int {
-		total += i
-		return total
-	}
-}
+//func addBy() func(int) int {
+//	total := 0
+//	return func(i int) int {
+//		total += i
+//		return total
+//	}
+//}
+//
+//func multBy() func(int) int {
+//	total := 1
+//	return func(i int) int {
+//		total *= i
+//		return total
+//	}
+//}
 
-func multBy() func(int) int {
-	total := 1
-	return func(i int) int {
-		total *= i
-		return total
-	}
+//func calc(f func(int) int, x int) int {
+//	return f(x)
+//}
+
+////////////Assignment//////////
+
+//func calc(f func(int, int) int, x, y int) int {
+//	return f(x, y)
+//}
+
+func calc(f func(...int) int, i []int) int {
+	return f(i...)
 }
