@@ -18,19 +18,29 @@ import "fmt"
 //	author string
 //}
 
-type player struct {
-	name, sport string
-	age         int
-	info        generalInfo
+//type player struct {
+//	name, sport string
+//	age         int
+//	info        generalInfo
+//}
+//type generalInfo struct {
+//	country, color string
+//}
+
+type movie struct {
+	name, actor string
 }
-type generalInfo struct {
-	country, color string
+
+func (m movie) fullInfo() string {
+	return m.name + " " + m.actor
 }
 
 func main() {
 
-	pl := player{"21312", "12312312", 44, generalInfo{"2333", "55555"}}
-	fmt.Println(pl)
+	m1 := movie{"Mike", "Tom kruz"}
+	fmt.Println(m1.fullInfo())
+	//pl := player{"21312", "12312312", 44, generalInfo{"2333", "55555"}}
+	//fmt.Println(pl)
 
 	//b1 := book{"Go Programming", "Author 1"}
 	//b2 := book{"Go Programming", "Author 1"}
