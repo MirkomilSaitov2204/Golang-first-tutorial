@@ -1,29 +1,29 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
-
 //type player struct {
 //	name, sport string
 //	age         int
 //}
 
-type employee struct {
-	name, job    string
-	lastLoggedIn string
-	DOB          date.Date
-}
+//type employee struct {
+//	name, job    string
+//	lastLoggedIn string
+//	DOB          date.Date
+//}
 
 func main() {
-	var emp employee
-
-	emp.name = "Mike"
-	emp.job = "GO prog"
-	emp.lastLoggedIn = time.Now().Format(time.RFC850)
-	emp.DOB = date.Today()
-	fmt.Println(emp)
+	//var emp employee
+	//
+	//emp.name = "Mike"
+	//emp.job = "GO prog"
+	//emp.lastLoggedIn = time.Now().Format(time.RFC850)
+	//emp.DOB = date.Today()
+	//fmt.Println(emp)
+	//
+	//p := &emp
+	//p.name = "UUUUUU"
+	//fmt.Println(*p)
+	//fmt.Println(emp)
 
 	//type myType float64
 	//var total myType
