@@ -3,6 +3,7 @@ package render
 import (
 	"bytes"
 	"fmt"
+	"github.com/MirkomilSaitov2204/go-course/pkg/config"
 	"html/template"
 	"log"
 	"net/http"
@@ -11,22 +12,30 @@ import (
 
 var functions = template.FuncMap{}
 
+var app *config.AppConfig
+
+//NewTemplates
+func NewTemplates(a *config.AppConfig) {
+	app = a
+}
+
 // RenderRemplate
 func RenderTemplate(w http.ResponseWriter, tmpl string) {
 
-	tc, err := CreateTemplateCache()
-	if err != nil {
-		log.Fatal(err)
-	}
+	tc := app.TemplateCache
+	//tc, err := CreateTemplateCache()
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
 
 	t, ok := tc[tmpl]
 	if !ok {
-		log.Fatal(err)
+		log.Fatal("Could not template cache")
 	}
 
 	buf := new(bytes.Buffer)
 	_ = t.Execute(buf, nil)
-	_, err = buf.WriteTo(w)
+	_, err := buf.WriteTo(w)
 
 	if err != nil {
 		fmt.Println(err)

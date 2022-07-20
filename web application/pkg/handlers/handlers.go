@@ -1,9 +1,30 @@
 package handlers
 
 import (
+	"github.com/MirkomilSaitov2204/go-course/pkg/config"
 	"github.com/MirkomilSaitov2204/go-course/pkg/render"
 	"net/http"
 )
+
+// Repo
+var Repo *Repository
+
+// Repository
+type Repository struct {
+	App *config.AppConfig
+}
+
+// NewRepo
+func NewRepo(a *config.AppConfig) *Repository {
+	return &Repository{
+		App: a,
+	}
+}
+
+// NewHandlers
+func NewHandlers(r *Repository) {
+	Repo = r
+}
 
 func Home(w http.ResponseWriter, r *http.Request) {
 	render.RenderTemplate(w, "home.page.gohtml")
@@ -11,7 +32,6 @@ func Home(w http.ResponseWriter, r *http.Request) {
 
 func About(w http.ResponseWriter, r *http.Request) {
 	render.RenderTemplate(w, "about.page.gohtml")
-
 }
 
 //func Divide(w http.ResponseWriter, r *http.Request) {
