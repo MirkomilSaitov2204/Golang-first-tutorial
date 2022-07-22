@@ -8,9 +8,9 @@ import (
 var RegistratedRoutes = func(r *mux.Router) {
 
 	r.HandleFunc("/books/", controllers.GetAllBooks).Methods("GET")
-	r.HandleFunc("/books/{id}", controllers.GetbookById).Methods("GET")
+	r.HandleFunc("/books/{id}", controllers.GetBookById).Methods("GET")
 	r.HandleFunc("/books/{id}", controllers.CreateBook).Methods("POST")
 	r.HandleFunc("/books/{id}", controllers.UpdateBook).Methods("PUT")
-	r.HandleFunc("/books/{id}", controllers.DeletePost).Methods("DELETE")
+	r.HandleFunc("/books/{id}", controllers.DeleteBook).Methods("DELETE")
 
 }
